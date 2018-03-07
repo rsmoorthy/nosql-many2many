@@ -1,0 +1,86 @@
+Creating Users and Queues (one by one):
+
+$ time node test.js 
+Time taken to insert users:  2.697
+Time taken to insert queues:  0.088
+
+real	0m31.684s
+user	0m30.157s
+sys	0m1.826s
+
+
+Creating Users and Queues (insertMany):
+
+$ time node test.js 
+Time taken to insert users:  1.82
+Time taken to insert queues:  0.083
+
+real	0m2.367s
+user	0m1.948s
+sys	0m0.105s
+
+
+Associating Users and Queues:
+
+                                        records, time taken
+Associate 1000 records and Time taken:  995 0.493
+Associate 1000 records and Time taken:  999 0.44
+Associate 1000 records and Time taken:  997 0.375
+Associate 1000 records and Time taken:  996 0.378
+Associate 1000 records and Time taken:  999 0.392
+Associate 1000 records and Time taken:  998 0.419
+Associate 1000 records and Time taken:  997 0.367
+Associate 1000 records and Time taken:  998 0.361
+Associate 1000 records and Time taken:  998 0.331
+Associate 1000 records and Time taken:  995 0.344
+Associate 1000 records and Time taken:  999 0.34
+Associate 1000 records and Time taken:  999 0.397
+
+
+Fetching Random 1000 users: (without their queues)
+
+                                 users, queues, timetaken
+Time taken to fetch 1000 users:  990 0 0.059
+Time taken to fetch 1000 users:  985 0 0.059
+Time taken to fetch 1000 users:  994 0 0.06
+
+Fetching Random 1000 users: (with their queues)
+
+                                 users, queues, timetaken
+Time taken to fetch 1000 users:  986 601 0.098
+Time taken to fetch 1000 users:  985 657 0.096
+Time taken to fetch 1000 users:  993 625 0.098
+
+
+Fetching Random 100 queues: (without their users)
+
+                                 queues, users, timetaken
+Time taken to fetch 100 queues:  93 0 0.016
+Time taken to fetch 100 queues:  96 0 0.016
+Time taken to fetch 100 queues:  95 0 0.016
+
+Fetching Random 100 queues: (with their users)
+
+                                 queues, users, timetaken
+Time taken to fetch 100 queues:  92 2909 0.145
+Time taken to fetch 100 queues:  94 3019 0.141
+Time taken to fetch 100 queues:  92 2925 0.141
+
+
+
+Removing Random 50 users: (along with updating their queues)
+
+                                                  users, queues, timetaken
+Time taken to remove 50 users and update Queues:  49 52 0.033
+Time taken to remove 50 users and update Queues:  49 49 0.032
+Time taken to remove 50 users and update Queues:  49 59 0.034
+
+
+Removing Random 50 queues: (along with updating their users)
+
+                                                  queues, users, timetaken
+Time taken to remove 50 queues and update Users:  48 1548 0.379
+Time taken to remove 50 queues and update Users:  43 1416 0.34
+Time taken to remove 50 queues and update Users:  44 1440 0.338
+
+
